@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS/NevBar.css';
+import {Link} from 'react-router-dom';
 import img from '../images/first.png';
 export default function NevBar(props) {
   const [mode, setMode] = useState(0);
@@ -56,11 +57,11 @@ export default function NevBar(props) {
           <div style={{fontSize:'20px',fontFamily:"poppins",fontWeight:"400px",paddingTop:"20px",position:"relative",left:"15px",top:"-12px"}}>Visioniyam</div>
         </div>
         <div style={{ display: "flex", gap: "40px", fontFamily: "poppins", fontWeight: '100',position:'absolute',left:"35%",top:"0px", fontSize: "17px" }}>
-         <a href='#'><div className='headerheading' onClick={changehomeState} style={{ textDecoration: `${home}`,paddingTop:'40px'}}>Home</div></a> 
-         <a href='#aboutus'> <div className='headerheading'  onClick={changeaboutus} style={{ textDecoration: `${aboutus}`,paddingTop:'40px'}} >About Us</div></a>
-         <a href='#how'><div className='headerheading' onClick={changehowState} style={{ textDecoration: `${how}`,paddingTop:'40px' }}>How?</div></a> 
-          <a href='#readocs'><div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Read Docs</div></a>
-          <a href='#aboutus'><div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Read Docs</div></a>
+         <Link to="/"><div className='headerheading' onClick={changehomeState} style={{ textDecoration: `${home}`,paddingTop:'40px'}}>Home</div></Link> 
+         <Link to='/about'> <div className='headerheading'  onClick={changeaboutus} style={{ textDecoration: `${aboutus}`,paddingTop:'40px'}} >About Us</div></Link>
+         <Link to='/how'><div className='headerheading' onClick={changehowState} style={{ textDecoration: `${how}`,paddingTop:'40px' }}>How?</div></Link> 
+          <Link to='/read'><div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Read Docs</div></Link>
+          <div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Switch Mode</div>
           </div>
           <div className="form-check form-switch" style={{position:"absolute",left:"78%",top:"41px"}}>
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}/>

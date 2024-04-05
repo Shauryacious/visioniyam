@@ -48,7 +48,7 @@ const EyeMovement = () => {
       <path style={{ fill: '#C9E3F7' }} d="M512,256c0,0-85.333,170.667-256,170.667c0-42.667,0-284.444,0-341.333C426.667,85.333,512,256,512,256z" />
       <circle style={{ fill: '#78B9EB' }} cx="256" cy="256" r="128" />
       <path style={{ fill: '#5A8BB0' }} d="M256,128c70.692,0,128,57.307,128,128s-57.308,128-128,128" />
-      <circle style={{ fill: '#ffffff' }} cx="256" cy="256" r="85.333" />
+      <circle style={{ fill: '#ffffff' }} cx="256" cy="256" r="70" />
       <g className="ball-group">
         <circle cx="255" cy="255" r="42.667" className="ball" style={{ transform: `translate(${eyeballPosition.x}px, ${eyeballPosition.y}px)` }} />
       </g>
