@@ -5,12 +5,34 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 class mouseController:
+
+    def __init__(self):
+        self.camera = cv2.VideoCapture(0)
+        self.screenWidth , self.screenHeight = pyautogui.size()
+        self.running = False
     def start(self):
         self.running = True
+        self.capture()
 
     def stop(self):
         self.running = False
 
+    def capture(self):
+        if self.running:
+            ret , frame = self.camera.read()
+            frame = cv2.flip(frame,1)
+            frameHeight, frameWidth , _ = frame.shape
+            rgbFrame =cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        self.displayFrame(frame)
+        self.root.after(10,self.capture())
+
+
+    def displayFrame(self,frame):
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.resize(frame, (640, 480))
+        self.img = ImageTk.PhotoImage(Image.fromarray(frame))
+        self.videoPanel.config(image=self.img)
 
     def run(self):
         self.root =tk.Tk()
