@@ -7,6 +7,7 @@ from PIL import Image, ImageTk
 class mouseController:
 
     def __init__(self):
+        self.faceMesh =mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
         self.camera = cv2.VideoCapture(0)
         self.screenWidth , self.screenHeight = pyautogui.size()
         self.running = False
@@ -23,10 +24,30 @@ class mouseController:
             frame = cv2.flip(frame,1)
             frameHeight, frameWidth , _ = frame.shape
             rgbFrame =cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            output = self.faceMesh.process(rgbFrame)
+
+            if output.multi_face_landmarks:
+                landmarks = output.multi_face_landmarks[0].landmark
+                self.changeMousePosition(landmarks)
 
         self.displayFrame(frame)
         self.root.after(10,self.capture())
 
+
+    def changeMousePosition(self, landmarks):
+        dist1 = landmarks[411].x - landmarks[1].x
+        dist2 = landmarks[411].x - landmarks[206].x
+        if (dist1 / dist2 > 0.80):
+            pyautogui.move(-30, 0)
+        if (dist1 / dist2 < 0.55):
+            pyautogui.move(30, 0)
+
+        dist3 = landmarks[10].y - landmarks[1].y
+        dist4 = landmarks[10].y - landmarks[152].y
+        if (dist3 / dist4 > 0.55):
+            pyautogui.move(0, 30)
+        if (dist3 / dist4 < 0.49):
+            pyautogui.move(0, -30)
 
     def displayFrame(self,frame):
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
