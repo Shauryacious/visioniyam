@@ -2,6 +2,7 @@ import Home from "./component/Home.js";
 import How from "./component/How.js";
 import NevBar from "./component/NevarBar.js";
 import { useState } from "react";
+import Footer from "./component/footer.js";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 function App() {
   const [color, setColor] = useState("black");
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<Home></Home>}></Route>
       <Route path="/how" element={<How></How>}></Route>
      </Routes>
+     <Footer></Footer>
      </div>
        </BrowserRouter>
     </>
