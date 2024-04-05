@@ -89,11 +89,17 @@ class MouseController:
         self.root = tk.Tk()
         self.root.title("Visioniyam")
 
-        self.start_btn = tk.Button(self.root, text="Start Capturing", command=self.start)
-        self.start_btn.pack(pady=10)
+        # Load icon
+        self.root.iconbitmap('icon.ico')
 
-        self.stop_btn = tk.Button(self.root, text="Stop Capturing", command=self.stop)
-        self.stop_btn.pack(pady=5)
+        button_frame = tk.Frame(self.root)
+        button_frame.pack(pady=10)
+
+        self.start_btn = tk.Button(button_frame, text="Start Capturing", command=self.start)
+        self.start_btn.pack(side=tk.LEFT, padx=10)
+
+        self.stop_btn = tk.Button(button_frame, text="Stop Capturing", command=self.stop)
+        self.stop_btn.pack(side=tk.LEFT, padx=10)
 
         self.video_panel = tk.Label(self.root)
         self.video_panel.pack()
