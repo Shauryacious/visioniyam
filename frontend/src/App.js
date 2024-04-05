@@ -5,8 +5,8 @@ import { useState } from "react";
 import Footer from "./component/footer.js";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 function App() {
-  const [color, setColor] = useState("black");
-  const [bgcolor, setBgColor] = useState("white");
+  const [color, setColor] = useState("white");
+  const [bgcolor, setBgColor] = useState("black");
   return (
     <>
     <BrowserRouter>

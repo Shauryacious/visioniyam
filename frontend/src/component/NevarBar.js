@@ -10,7 +10,7 @@ export default function NevBar(props) {
   const [contect, setcontect] = useState("");
 
   function changeMode() {
-    if (mode % 2 === 0) {
+    if (mode % 2 != 0) {
       props.setColor("white");
       props.setBgColor("black");
       console.log("mode1");

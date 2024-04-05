@@ -5,7 +5,7 @@ const DownloadComponent = () => {
   return (
     <div>
       {isWindows && (
-        <p style={{position:"relative",top:"7px"}}>
+        <p style={{position:"relative"}}>
           <a href="https://drive.usercontent.google.com/download?id=1xe1dyDM7b1BhrZl5JP0jNab-MAQ7ezI0&export=download&authuser=0" target='_blank'style={{color:'black',textDecoration:"none"}}>
           <i class="fa-brands fa-windows" style={{paddingRight:"20px"}}></i>
           Download for Windows
