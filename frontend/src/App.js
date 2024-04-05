@@ -1,7 +1,7 @@
-import Eye from './component/Eye.js'
+import Home from "./component/Home.js";
 function App() {
   return (
-    <Eye></Eye>
+    <Home color={"black"}></Home>
   );
 }
 
