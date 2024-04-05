@@ -1,0 +1,17 @@
+.headerheading{
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 600;
+    text-decoration: None;
+}
+.headerheading:hover{
+    cursor: pointer;
+}
+.nevebarbutton{
+    border:none;
+    background-color:rgb(0, 0, 0) ;
+    border-radius: 30px;
+}
+nevebarbutton:hover{
+    background-color: var(--first-color-alt);
+}
