@@ -27,17 +27,35 @@ export default function Signin() {
   const handleSubmit = () => {
     if (password !== cpassword) {
       setPNotMatch(false);
+    } else {
+      setPNotMatch(true);
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Password:", password);
+      console.log("Confirm Password:", cpassword);
+      fetch('http://localhost:3001/api/v1/users/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+        passwordConfirm:cpassword
+        }),
+        headers: {
+          'Content-type': 'application/json',
+        },
+        mode: 'no-cors' 
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("AuthToken:", data.status);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     }
-    if(password===cpassword){
-        setPNotMatch(true);
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Password:", password);
-        console.log("Confirm Password:", cpassword);
-    }
-
   };
-
+  
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">

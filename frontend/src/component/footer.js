@@ -15,7 +15,7 @@
 // }
 
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 const Footer = () => {
   const footerStyle = {
     background: 'linear-gradient(to right, #4b6cb7, #182848)',
@@ -33,17 +33,17 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <div>
-        <h2>Company Name</h2>
-        <p>Address: 123 Main Street, City, Country</p>
-        <p>Contact: +1 234 567 890</p>
-        <p>Email: info@example.com</p>
+        <h2>VISIONIYAM</h2>
+        <p>NIT Raipur,Raipur Chhattisgarh</p>
+        <p>Contact: 70070612419,7583940234</p>
+        <p>Email: arunrathaur92.6@gmail.com,karanmangalani@gmail.com,Shauryabansal@gmail.com</p>
       </div>
       <div>
         <nav>
-          <a style={iconStyle} href="#">Home</a>
-          <a style={iconStyle} href="#">About Us</a>
-          <a style={iconStyle} href="#">Services</a>
-          <a style={iconStyle} href="#">Contact</a>
+          <Link style={iconStyle} to="/">Home</Link>
+          <Link style={iconStyle} to="/about">About Us</Link>
+          <Link style={iconStyle} to="/how">How</Link>
+          <Link style={iconStyle} to="/docs">Documentation</Link>
         </nav>
       </div>
       <div>
@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
       <div>
         <input type="email" placeholder="Subscribe to Newsletter" style={{ padding: '5px', borderRadius: '5px' }} />
-        <button style={{ padding: '5px 10px', marginLeft: '10px', background: 'white', borderRadius: '5px' }}>Subscribe</button>
+        <button style={{ padding: '5px 10px', marginLeft: '10px', background: 'white', borderRadius: '5px',color:'black' }}>Subscribe</button>
       </div>
     </footer>
   );
