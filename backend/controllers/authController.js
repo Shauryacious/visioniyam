@@ -1,7 +1,10 @@
 const User = require("./../models/userModel");
 const jwt = require("jsonwebtoken");
 
-
+//! UTILS
+const AppError = require("./../utils/appError");
+const catchAsync = require("./../utils/catchAsync");
+const Email = require("./../utils/email");
 
 const signToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
@@ -44,6 +47,16 @@ exports.signup = async (req, res, next) => {
     })
 
     const jwt_token = signToken(newUser._id);
+
+    //! SEND THE WELCOME EMAIL TO THE USER
+    const url = `${req.protocol}://${req.get('host')}/me`;
+    console.log(url);
+    await new Email(newUser, url).sendWelcome();
+
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRES_IN,
+    });
+
     res.status(200).json({
         status: 'success',
         data: {
