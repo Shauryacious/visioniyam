@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './../CSS/aboutus.css'; // Import your CSS file for styling
 import Image from '../images/team.jpg'
-const AboutUs = () => {
+const AboutUs = (props) => {
     return (
         <div className="about-container" style={{paddingTop:"100px"}}>
             <motion.div
@@ -12,18 +12,18 @@ const AboutUs = () => {
                 className="about-content"
             >
                 <div style={{marginRight:'100px'}}>
-                <h2>Welcome to Our Story</h2>
-                <p>
+                <h2 style={{color:props.color,fontWeight:"600"}}>Welcome to Our Story</h2>
+                <p style={{color:props.color}}>
                     We are a team of passionate individuals dedicated to providing you
                     with the best experience possible. Our journey started with a simple
                     idea and has grown into something truly special.
                 </p>
-                <p>
+                <p style={{color:props.color}}>
                     Our mission is to create innovative solutions that make your life
                     easier and more enjoyable. We believe in the power of technology to
                     connect people and enhance everyday experiences.
                 </p>
-                <p>
+                <p style={{color:props.color}}>
                     Whether you're a long-time customer or just discovering us, we're
                     thrilled to have you join us on this adventure. Thank you for being a
                     part of our story.

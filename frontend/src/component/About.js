@@ -8,9 +8,9 @@ import AboutUs from './AboutUs';
 export default function Card(props) {
   return (
     <>
-     <AboutUs></AboutUs>
+     <AboutUs color={props.color} bgcolor={props.bgcolor}></AboutUs>
     <div style={{paddingBottom:"100px"}}>
-    <div style={{textAlign:"center",textAlign:"center",fontSize:"30px",fontFamily:"poppins",fontWeight:"poppins",fontWeight:"700",width:"100%",paddingBottom:"40px"}}>About US</div>
+    <div style={{textAlign:"center",textAlign:"center",fontSize:"30px",fontFamily:"poppins",fontWeight:"poppins",fontWeight:"600",width:"100%",paddingBottom:"40px"}}>About US</div>
     <div style={{display:"flex",justifyContent:"center"}}>
     <div style={{display:"flex",gap:"150px",width:"100%",left:"60px",width:'fit-content'}}>
     <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 cardhovereffect">

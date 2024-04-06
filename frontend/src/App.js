@@ -20,7 +20,7 @@ function App() {
      <Routes>
       <Route path='/' element={<Home></Home>}></Route>
       <Route path="/how" element={<How></How>}></Route>
-      <Route path='/about' element={<About></About>}></Route>
+      <Route path='/about' element={<About color={color} bgcolor={bgcolor}></About>}></Route>
       <Route path="/docs" element={<Readocs color={color} bgcolor={bgcolor}></Readocs>}></Route>
       <Route path="/signeup" element={<Signin changeislogin={changeislogin}></Signin>}></Route>
       <Route path="/login" element={<Login changeislogin={changeislogin}></Login>}></Route>
