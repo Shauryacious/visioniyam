@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #020710;
+  font-family: 'Inter' Arial;
+}
+
+
+.button-wrapper {
+  position: relative;
+}
+
+
+.button {
+  display: block;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 16px 32px;
+  background-color: black;
+  color: white;
+	border-radius: 50px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.button-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+  background-size: 600% 600%;
+  border-radius: 50px;
+  animation: AnimateBorder 4s ease infinite;
+  -webkit-animation: AnimateBorder 4s ease infinite;
+  -moz-animation: AnimateBorder 4s ease infinite;
+  z-index: -1;
+  transform: translate(-2px, -2px);
+  transition: filter 1s ease-in;
+}
+
+.button-wrapper:hover .button-bg {
+  filter: blur(10px);
+  transition: filter .4s ease-in;
+}
+
+
+@-webkit-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="button-wrapper">
+          <button class="button" type="button">hover me</button>
+          <div class="button-bg"></div>
+        </div>
+          </div>
+</body>
+</html>

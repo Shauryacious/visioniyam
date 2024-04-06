@@ -1,0 +1,53 @@
+
+  .button-wrapper {
+    position: relative;
+  }
+  
+  .homebutton {
+    display: block;
+    font-size: 13px;
+    line-height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+    color: white;
+    border-radius: 50px;
+    border: 0px;
+    cursor: pointer;
+    transition: 2s;
+    animation: AnimateBorder 2s ease-in-out 0s infinite ;
+  }
+  
+  .button-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+    background-size: 600% 600%;
+    border-radius: 50px;
+    animation: AnimateBorder 4s ease infinite;
+    z-index: -1;
+    transform: translate(-2px, -2px);
+    transition: filter 1s ease-in;
+  }
+  
+  .button-wrapper:hover .button-bg {
+    filter: blur(10px);
+    transition: filter .6s ease-in;
+  }
+  .button:hover{
+    box-shadow: 1px 1px 30px rgb(84, 84, 235);
+   animation: none      ;
+  }
+  
+  @keyframes AnimateBorder {
+    0% {  box-shadow:2px 2px 30px rgb(34, 177, 224); }
+    50% {  box-shadow:2px 2px 30px rgb(0, 255, 183); }
+    75% {  box-shadow:2px 2px 30px rgb(163, 3, 255); }
+    100% {  box-shadow:2px 2px 30px rgb(34, 177, 224);}
+  }
+  
