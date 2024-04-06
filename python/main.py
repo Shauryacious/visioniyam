@@ -60,8 +60,9 @@ class MouseController:
                 pyautogui.click()
 
     def right_click(self, right):
+        print(right[1].y - right[0].y)
         for landmark in right:
-            if (right[1].y - right[0].y) < 0.021:
+            if (right[1].y - right[0].y) < 0.017:
                 pyautogui.click(button="right")
 
     def display_frame(self, frame):
@@ -90,7 +91,27 @@ class MouseController:
     def calibrate_right_eye(self):
         self.calibration_text = "Close right eye..."
         self.update_calibration_text()
-        self.root.after(5000, self.finish_calibration)
+        self.root.after(5000, self.calibrate_movement_head_up)
+
+    def calibrate_movement_head_up(self):
+        self.calibration_text = "Move Your head slightly up"
+        self.update_calibration_text()
+        self.root.after(3500,self.calibrate_movement_head_down)
+
+    def calibrate_movement_head_down(self):
+        self.calibration_text = "Move your head slightly down"
+        self.update_calibration_text()
+        self.root.after(3500,self.calibrate_movement_head_left())
+
+    def calibrate_movement_head_left(self):
+        self.calibration_text = "Move your head slightly to the left"
+        self.update_calibration_text()
+        self.root.after(3500,self.calibrate_movement_head_right)
+
+    def calibrate_movement_head_right(self):
+        self.calibration_text = "Move your head slightly to the right"
+        self.update_calibration_text()
+        self.root.after(3500,self.finish_calibration)
 
     def finish_calibration(self):
         self.calibration_text = "Calibration complete."
@@ -110,13 +131,13 @@ class MouseController:
         button_frame = tk.Frame(self.root)
         button_frame.pack(pady=10)
 
-        self.start_btn = tk.Button(button_frame, text="Start Capturing", command=self.start)
+        self.start_btn = tk.Button(button_frame, text="Start Capturing", command=self.start , height=3)
         self.start_btn.pack(side=tk.LEFT, padx=10)
 
-        self.stop_btn = tk.Button(button_frame, text="Stop Capturing", command=self.stop)
+        self.stop_btn = tk.Button(button_frame, text="Stop Capturing", command=self.stop , height=3)
         self.stop_btn.pack(side=tk.LEFT, padx=10)
 
-        self.calibrate_btn = tk.Button(button_frame, text="Calibrate", command=self.calibrate)
+        self.calibrate_btn = tk.Button(button_frame, text="Calibrate", command=self.calibrate , height=3)
         self.calibrate_btn.pack(side=tk.LEFT, padx=10)
 
         self.calibration_label = tk.Label(self.root, text="")
@@ -124,8 +145,6 @@ class MouseController:
 
         self.video_panel = tk.Label(self.root)
         self.video_panel.pack()
-
-
 
         self.root.mainloop()
 
