@@ -10,6 +10,8 @@ exports.signup = async (req, res, next) => {
 
     res.status(200).json({
         status: 'success',
-        data: "Hello from sign up page"
+        data: {
+            newUser
+        }
     })
 };
