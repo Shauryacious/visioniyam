@@ -4,7 +4,7 @@ import Image from '../images/first.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 
-export default function Login() {
+export default function Login(props) {
   const navigate=useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +32,7 @@ export default function Login() {
         console.log(response.data.status);
         console.log(response.data.jwt_token);
         navigate('/');
+        props.changeislogin(true);
       } else {
         console.error('Server error:', response.statusText);
       }

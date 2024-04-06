@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../CSS/NevBar.css';
+import { useNavigate } from 'react-router-dom'; 
 import {Link} from 'react-router-dom';
 import img from '../images/first.png';
 export default function NevBar(props) {
+  const navigate = useNavigate();
   const [mode, setMode] = useState(0);
   const [home, setHome] = useState("");
   const [how, sethow] = useState("");
@@ -50,6 +52,10 @@ export default function NevBar(props) {
     setcontect("");
     setaboutus("underline");
   }
+  function logout(){
+    props.changeislogin(false);
+    navigate('/login');
+  }
   return (
     <div style={{ color: props.color, background: props.bgColor }}>
       <div style={{ marginLeft: "50px", marginTop: "2%", color: props.color, background: props.bgColor }}>
@@ -66,8 +72,9 @@ export default function NevBar(props) {
           <div className="form-check form-switch" style={{position:"absolute",left:"78%",top:"41px"}}>
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}/>
           </div>
-          <button type="button" className="btn btn-primary nevebarbutton" style={{ color:`${(props.bgColor==="black")?"black":"white"}`, background: props.bgColor, position: "absolute", right: "2%", top: "30px" }}><Link to="/login">Login</Link></button>
-          <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "8%", top: "30px" }}><Link to="/signeup" style={{ color:`${(props.bgColor==="black")?"black":"white"}`, background: props.bgColor}}>Sign Up</Link></button>
+          {!props.islogin && <button type="button" className="btn btn-primary nevebarbutton" style={{ color:`${(props.bgColor==="black")?"black":"white"}`, background: props.bgColor, position: "absolute", right: "2%", top: "30px" }}><Link to="/login">Login</Link></button>}
+         {!props.islogin&& <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "8%", top: "30px" }}><Link to="/signeup" style={{ color:`${(props.bgColor==="black")?"black":"white"}`, background: props.bgColor}}>Sign Up</Link></button>} 
+          {props.islogin &&<button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "8%", top: "30px" }}><span style={{ color:`${(props.bgColor==="black")?"black":"white"}`, background: props.bgColor}} onClick={logout}>Log Out</span></button>}
       </div>
     </div>
   );

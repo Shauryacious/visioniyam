@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from '../images/first.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
-export default function Signin() {
+export default function Signin(props) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -44,6 +44,7 @@ export default function Signin() {
         navigate('/');
         console.log(response.data.status); 
         console.log(response.data.jwt_token);
+        props.changeislogin(true);
       } else {
         console.error('Server error:', response.statusText);
       }
