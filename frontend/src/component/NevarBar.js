@@ -67,8 +67,8 @@ export default function NevBar(props) {
           <div className="form-check form-switch" style={{position:"absolute",left:"78%",top:"41px"}}>
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}/>
           </div>
-          {/* <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "2%", top: "30px" }}>Login</button>
-          <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "8%", top: "30px" }}>SignIn</button> */}
+          <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "2%", top: "30px" }}>Login</button>
+          <button type="button" className="btn btn-primary nevebarbutton" style={{ color: props.color, background: props.bgColor, position: "absolute", right: "8%", top: "30px" }}><Link to="/signeup">Sign Up</Link></button>
       </div>
     </div>
   );
