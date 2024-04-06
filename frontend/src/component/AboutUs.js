@@ -1,16 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './../CSS/aboutus.css'; // Import your CSS file for styling
-
+import Image from '../images/team.jpg'
 const AboutUs = () => {
     return (
-        <div className="about-container">
+        <div className="about-container" style={{paddingTop:"100px"}}>
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="about-content"
             >
+                <div style={{marginRight:'100px'}}>
                 <h2>Welcome to Our Story</h2>
                 <p>
                     We are a team of passionate individuals dedicated to providing you
@@ -27,12 +28,13 @@ const AboutUs = () => {
                     thrilled to have you join us on this adventure. Thank you for being a
                     part of our story.
                 </p>
+                </div>
             </motion.div>
             <motion.img
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                src="./../images/first.png"
+                src={Image}
                 alt="Team Photo"
                 className="about-image"
             />

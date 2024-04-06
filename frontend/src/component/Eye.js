@@ -33,8 +33,8 @@ const EyeMovement = () => {
 
   return (
     <svg
-      height="300px"
-      width="300px"
+      height="400px"
+      width="400px"
       className="eye"
       version="1.1"
       id="Layer_1"

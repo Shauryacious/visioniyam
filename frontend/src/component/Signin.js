@@ -24,41 +24,59 @@ export default function Signin() {
     setCPassword(event.target.value);
   };
 
-  const handleSubmit = () => {
-    if (password !== cpassword) {
-      setPNotMatch(false);
-    } else {
-      setPNotMatch(true);
-      console.log("Name:", name);
-      console.log("Email:", email);
-      console.log("Password:", password);
-      console.log("Confirm Password:", cpassword);
-      fetch('http://localhost:3001/api/v1/users/signup', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-        passwordConfirm:cpassword
-        }),
-        headers: {
-          'Content-type': 'application/json',
-        },
-        // mode: 'no-cors' 
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log("AuthToken:", data.status);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
-  };
+  // const handleSubmit = async() => {
+  //   if (password !== cpassword) {
+  //     setPNotMatch(false);
+  //   } else {
+  //     setPNotMatch(true);
+  //     console.log("Name:", name);
+  //     console.log("Email:", email);
+  //     console.log("Password:", password);
+  //     console.log("Confirm Password:", cpassword);
+  //    await fetch('http://localhost:3001/api/v1/users/signup', {
+  //       method: 'POST',
+  //       body: JSON.stringify({
+  //         name: name,
+  //         email: email,
+  //         password: password,
+  //       passwordConfirm:cpassword
+  //       }),
+  //       headers: {
+  //         'Content-type': 'application/json',
+  //       },
+  //       // mode: 'no-cors' 
+  //     })
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         console.log("AuthToken:", data.status);
+  //       })
+  //       .catch(error => {
+  //         console.error('Error:', error);
+  //       });
+  //   }
+  // };
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const response = await fetch(`http://localhost:3001/api/v1/users/signup`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+      passwordConfirm:cpassword
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      },
+      mode: 'no-cors' 
+    })
+
+    console.log(response);
+  }
   
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className=" ">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '30px', marginBottom: '-60px' }}>

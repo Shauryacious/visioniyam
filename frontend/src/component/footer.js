@@ -1,78 +1,15 @@
-// // import React from 'react'
-
-// // export default function Footer() {
-// //   return (
-// //       <div style={{background:"lightgray",color:'black',width:'100%',position:"relative",paddingBottom:"20px",fontWeight:"500",fontSize:"20px",textAlign:'center'}}>
-// //   <div className="card-header">
-// //   <div className="card-body">
-// //     <h5 className="card-title">VISIONIYAM</h5>
-// //     <p className="card-text">A solution for paralyzed and disabled people to access technology.</p>
-// //     <p className="card-text">© Kirmada. All right reserved.</p>
-// //   </div>
-// // </div>
-// //   </div>
-// //   )
-// // }
-
-// import React from 'react';
-// import {Link} from 'react-router-dom'
-// const Footer = () => {
-//   const footerStyle = {
-//     background: 'linear-gradient(to right, #4b6cb7, #182848)',
-//     color: 'white',
-//     padding: '20px 0',
-//     textAlign: 'center',
-//   };
-
-//   const iconStyle = {
-//     marginRight: '10px',
-//     color: 'white',
-//     textDecoration: 'none',
-//   };
-
-//   return (
-//     <footer style={footerStyle}>
-//       <div>
-//         <h2>VISIONIYAM</h2>
-//         <p>NIT Raipur,Raipur Chhattisgarh</p>
-//         <p>Contact: 70070612419,7583940234</p>
-//         <p>Email: arunrathaur92.6@gmail.com,karanmangalani@gmail.com,Shauryabansal@gmail.com</p>
-//       </div>
-//       <div>
-//         <nav>
-//           <Link style={iconStyle} to="/">Home</Link>
-//           <Link style={iconStyle} to="/about">About Us</Link>
-//           <Link style={iconStyle} to="/how">How</Link>
-//           <Link style={iconStyle} to="/docs">Documentation</Link>
-//         </nav>
-//       </div>
-//       <div>
-//         <a href="#" style={iconStyle}><i className="fab fa-facebook-f"></i></a>
-//         <a href="#" style={iconStyle}><i className="fab fa-twitter"></i></a>
-//         <a href="#" style={iconStyle}><i className="fab fa-instagram"></i></a>
-//         <a href="#" style={iconStyle}><i className="fab fa-linkedin"></i></a>
-//       </div>
-//       <div>
-//         <input type="email" placeholder="Subscribe to Newsletter" style={{ padding: '5px', borderRadius: '5px' }} />
-//         <button style={{ padding: '5px 10px', marginLeft: '10px', background: 'white', borderRadius: '5px',color:'black' }}>Subscribe</button>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
 import React, { useState } from 'react';
-
+import Image from '../images/first.png'
 const Footer = () => {
   return (
     <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
-            <img className="w-auto h-9" src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg" alt="" />
-
-            <p className="text-base leading-relaxed text-gray-600 mt-7">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-
+            <div style={{display:"flex"}}>
+            <img className="w-auto h-9" src={Image} alt="" /><span style={{color:'black',paddingTop:"6px",paddingLeft:"5px"}}>Visioniyam</span>
+            </div>
+            <p className="text-base leading-relaxed text-gray-600 mt-7">Empowering accessibility through facial recognition, Visioniyam allows individuals with limited mobility to control their computer cursor using facial expressions and eye movements. Here's a breakdown of how our innovative system works:</p>
             <ul className="flex items-center space-x-3 mt-9">
               <li>
                 <a href="#" title="" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
