@@ -1,39 +1,82 @@
 import React from 'react'
+import '../CSS/how.css'
 export default function How() {
   return (
     <>
-    <div style={{paddingLeft:"100px"}}>
+    <div style={{paddingLeft:'200px'}} >
    
-        <div style={{textAlign:'center',width:'100%',fontSize:"30px",fontWeight:"800",fontFamily:"poppins",marginLeft:"-50px",textAlignLast:"center",padding:'50px',textDecoration:"underline",color:'blue'}}>Revolutionizing User Interaction with Cutting-Edge Face Landmark Detection Technology</div>
-        <div style={{width:"90%"}}>
-        <div style={{fontSize:'24px',fontWeight:'200'}}>
+        <div style={{textAlign:'center',width:'100%',fontSize:"23px",fontWeight:"600",marginLeft:"-200px",textAlignLast:"center",padding:'50px'}}>Revolutionizing User Interaction with Cutting-Edge Face Landmark Detection Technology</div>
+        <div style={{width:"80%"}}>
+        <div style={{fontSize:'18px',fontWeight:'400'}}>
 Our groundbreaking application leverages state-of-the-art face landmark movement detection technology to transform user interaction. This innovative system meticulously tracks the nuanced movements of the face, translating them into precise and intuitive mouse controls. As a result, users enjoy a seamless and fluid experience as they effortlessly navigate through their digital environment with just a glance.</div>
-    <div>
-    <div class="max-w-sm w-full lg:max-w-full lg:flex" style={{paddingTop:"50px",marginBottom:"50px"}}>
-  <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden " style={{width:"200px",height:"250px"}} src="https://www.assemblyai.com/blog/content/images/2022/04/face_tesselation_only-1.png" title="Woman holding a mug" />
+    <div style={{display:'flex',gap:"100px"}}>
+      <div className='leftconetent'style={{position:'relative',top:'100px'}}>
+      <div style={{fontSize:'35px',paddingBottom:"30px"}}>How it works</div>
+      <div style={{paddingBottom:"30px"}}>Empowering accessibility through facial recognition, Visioniyam allows individuals with limited mobility to control their computer cursor using facial expressions and eye movements. Here's a breakdown of how our innovative system works:
+</div>
+<div >Our system meticulously tracks the subtle movements of these facial landmarks.
+</div>
+      </div>
+      <div className='cardshow'>
+      <div className='section1' style={{display:"flex",gap:"30px"}}>
+    {/* card 1 */}
+    <div class="max-w-sm w-full lg:max-w-full lg:flex" style={{paddingTop:"50px",marginBottom:"50px",width:"300px",height:"300px"}}>
+    
  
-  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-    <div class="mb-8">
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal howboxdata" style={{display:'flex'}}>
+    <div class="mb-8" >
       
-      <div class="text-gray-900 font-bold text-xl mb-2 2xl">Detect 478 facial points</div>
+      <div class="text-gray-900 font-bold text-xl mb-2 2xl">
+Facial Landmark Identification:</div>
       <p class="text-gray-700 text-base">
-MediaPipe, developed by Google, employs deep neural networks to detect and track facial landmarks accurately in varying conditions. These landmarks include eyes, nose, mouth, etc. The technology's robustness and precision enable applications like real-time face tracking for AR filters, emotion recognition, and facial animation. MediaPipe's advanced capabilities make it a powerful tool for enhancing user experiences and creating innovative digital interactions.</p>
+      Utilizing cutting-edge facial landmark detection tools such as Google's MediaPipe, Visioniyam pinpoints 478 key points on the face, mapping precise features like eyes, nose, and mouth.</p>
     </div>
   
   </div>
 </div>
-<div class="max-w-sm w-full lg:max-w-full lg:flex rounded-lg" style={{paddingTop:"50px", marginBottom:"10px"}}>
-<img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{width: "200px;" ,height: "200px;"}} src="https://www.visioncenter.org/wp-content/uploads/2020/09/Eye-twitching.jpg" title="Woman holding a mug" />
-  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+{/* card 2 */}
+ <div class="max-w-sm w-full lg:max-w-full lg:flex" style={{paddingTop:"50px",marginBottom:"50px",width:"300px",height:"300px"}}>
+ 
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal howboxdata">
     <div class="mb-8">
-      <div class="text-gray-900 font-bold text-xl mb-2 2xl">Real-Time Mouse Control</div>
-      <p class="text-gray-700 text-base">Our innovative system calculates the distance between facial landmarks, enabling precise mouse control. By tracking the subtle movements of the face, users effortlessly navigate digital environments. MediaPipe, developed by Google, ensures accurate detection and tracking of facial points, including eyes, nose, and mouth. This technology empowers applications like AR filters, emotion recognition, and facial animation, enhancing user experiences with intuitive interactions.
+      
+      <div class="text-gray-900 font-bold text-xl mb-2 2xl">Subtle Motion Tracking:</div>
+      <p class="text-gray-700 text-base">
+      The system meticulously monitors subtle shifts in these facial landmarks, interpreting these changes to understand the user's desired actions.</p>
+    </div>
+  
+  </div>
+</div>
+</div>
+<div class='Section2' style={{display:"flex",gap:"30px",position:'relative',top:"-60px"}}>
+{/* card 3 */}
+<div class="max-w-sm w-full lg:max-w-full lg:flex" style={{paddingTop:"50px",marginBottom:"50px",width:"300px",height:"300px"}}>
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal howboxdata">
+    <div class="mb-8">
+      
+      <div class="text-gray-900 font-bold text-xl mb-2 2xl">Real-time Cursor Control:</div>
+      <p class="text-gray-700 text-base">
+
+      Transforming these tracked movements into immediate mouse cursor actions, Visioniyam translates facial landmark distances into on-screen cursor movements.
 </p>
     </div>
+  
   </div>
- 
 </div>
-
+{/* card 4 */}
+<div class="max-w-sm w-full lg:max-w-full lg:flex" style={{paddingTop:"50px",marginBottom:"50px",width:"300px",height:"300px"}}>
+  <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal howboxdata">
+    <div class="mb-8">
+      
+      <div class="text-gray-900 font-bold text-xl mb-2 2xl">Enhanced User Experience:</div>
+      <p class="text-gray-700 text-base">
+      Tailor your experience with customizable sensitivity and control settings, effortlessly navigating digital interfaces with minimal facial input.</p>
+    </div>
+  
+  </div>
+</div>
+</div>
+</div>
     </div>
     </div>
     </div>

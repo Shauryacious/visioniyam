@@ -1,0 +1,11 @@
+.howboxdata {
+    transition: transform 0.3s;
+    transform: scale(1); 
+}
+.howboxdata:hover {
+    transform: scale(1.01); 
+}
+.tickbox{
+    width:'100px';
+    height:'100px'
+}

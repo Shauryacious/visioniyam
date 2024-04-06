@@ -44,7 +44,7 @@ export default function Signin() {
         headers: {
           'Content-type': 'application/json',
         },
-        mode: 'no-cors' 
+        // mode: 'no-cors' 
       })
         .then(response => response.json())
         .then(data => {

@@ -1,16 +1,16 @@
 .readbox{
     width: 90%;
+
 }
 .Readheading1{
     border-radius: 20px;
     margin-top: 30px;
     width: 50%;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
-    animation: AnimateBorder 2s ease-in-out 0s infinite ;
+
 }
 .Readheading1:hover{
-
 }
 @keyframes AnimateBorder {
     0% {  box-shadow:2px 2px 20px rgb(34, 177, 224); }
@@ -18,21 +18,21 @@
     100% {  box-shadow:2px 2px 20px rgb(163, 3, 255); }
   }
 .Readheading{
-    color:rgb(77, 77, 194);
     font-weight: 500;
-    font-size: 30px;
+    font-size: 23px;
    
 }
 .Readheading:hover{
-    color:blue;
+
 }
 .Readcontent{
 
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
+}
+.Readcontent:hover{
 }
 .readocsheading1:hover{
-    color:blue;
 }
 .readocsheading1{
   

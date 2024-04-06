@@ -7,6 +7,7 @@ import Readocs from "./component/ReadDocs.js";
 import About from './component/About.js';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Signin from "./component/Signin.js";
+import Login from "./component/Login.js";
 function App() {
   const [color, setColor] = useState("white");
   const [bgcolor, setBgColor] = useState("black");
@@ -21,6 +22,7 @@ function App() {
       <Route path='/about' element={<About></About>}></Route>
       <Route path="/docs" element={<Readocs color={color} bgcolor={bgcolor}></Readocs>}></Route>
       <Route path="/signeup" element={<Signin></Signin>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
      </Routes>
      <Footer></Footer>
      </div>
