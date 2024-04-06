@@ -28,7 +28,7 @@ export default function Card(props) {
     1st year Computer Science and Engineering at NIT Raipur
   </div>
   <div class="flex justify-center p-6 pt-2 gap-7">
-    <a href="https://www.linkedin.com/in/arun-rathaur-5995651b7/">
+    <a href="https://www.linkedin.com/in/arun-rathaur-5995651b7/" target="_blank">
   <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#0077b5]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path
@@ -36,7 +36,7 @@ export default function Card(props) {
   </svg>
 </span>
 </a>
-<a href="https://twitter.com/arunrathaur001">
+<a href="https://twitter.com/arunrathaur001" target="_blank">
 <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-black">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function Card(props) {
     </div>
   </div>
   <div class="flex justify-center p-6 pt-2 gap-7">
-    <a href="https://www.linkedin.com/in/shauryacious/">
+    <a href="https://www.linkedin.com/in/shauryacious/" target="_blank">
   <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#0077b5]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path
@@ -75,7 +75,7 @@ export default function Card(props) {
   </svg>
 </span>
 </a>
-<a href="https://twitter.com/Shauryacious">
+<a href="https://twitter.com/Shauryacious" target="_blank">
 <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-black">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ export default function Card(props) {
     </div>
   </div>
   <div class="flex justify-center p-6 pt-2 gap-7">
-    <a href="https://www.linkedin.com/in/karan-manglani-423915187/">
+    <a href="https://www.linkedin.com/in/karan-manglani-423915187/" target="_blank">
   <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#0077b5]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path
@@ -114,7 +114,7 @@ export default function Card(props) {
   </svg>
 </span>
 </a>
-<a href="https://twitter.com/mkaran9721">
+<a href="https://twitter.com/mkaran9721" target="_blank">
 <span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-black">
   <svg
     xmlns="http://www.w3.org/2000/svg"
