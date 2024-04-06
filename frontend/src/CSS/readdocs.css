@@ -1,0 +1,60 @@
+.readbox{
+    width: 90%;
+}
+.Readheading1{
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 50%;
+    font-weight: 700;
+    font-size: 30px;
+    animation: AnimateBorder 2s ease-in-out 0s infinite ;
+}
+.Readheading1:hover{
+
+}
+@keyframes AnimateBorder {
+    0% {  box-shadow:2px 2px 20px rgb(34, 177, 224); }
+    50% {  box-shadow:2px 2px 20px rgb(0, 255, 183); }
+    100% {  box-shadow:2px 2px 20px rgb(163, 3, 255); }
+  }
+.Readheading{
+    color:rgb(77, 77, 194);
+    font-weight: 500;
+    font-size: 30px;
+   
+}
+.Readheading:hover{
+    color:blue;
+}
+.Readcontent{
+
+    font-weight: 500;
+    font-size: 20px;
+}
+.readocsheading1:hover{
+    color:blue;
+}
+.readocsheading1{
+  
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.readocscontent1{
+    font-family:monospace;
+    background: rgb(247, 247, 247);
+    border-radius: 10px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+.Readocsbutton{
+    color: rgb(0, 72, 161);
+    border-radius: 10px;
+    position: relative;
+    top:6px
+}
+.ReadDocsbox2{
+    padding-top: 50px;
+}

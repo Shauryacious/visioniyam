@@ -10,6 +10,7 @@ export default function NevBar(props) {
   const [contect, setcontect] = useState("");
 
   function changeMode() {
+    console.log(props.color);
     if (mode % 2 != 0) {
       props.setColor("white");
       props.setBgColor("black");
@@ -60,8 +61,8 @@ export default function NevBar(props) {
          <Link to="/"><div className='headerheading' onClick={changehomeState} style={{ textDecoration: `${home}`,paddingTop:'40px'}}>Home</div></Link> 
          <Link to='/about'> <div className='headerheading'  onClick={changeaboutus} style={{ textDecoration: `${aboutus}`,paddingTop:'40px'}} >About Us</div></Link>
          <Link to='/how'><div className='headerheading' onClick={changehowState} style={{ textDecoration: `${how}`,paddingTop:'40px' }}>How?</div></Link> 
-          <Link to='/read'><div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Read Docs</div></Link>
-          <div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Switch Mode</div>
+          <Link to='/docs'><div className='headerheading' onClick={changecontectState} style={{ textDecoration: `${contect}`,paddingTop:'40px' }}>Read Docs</div></Link>
+          <div className='headerheading' onClick={changecontectState} style={{ paddingTop:'40px' }}>Switch Mode</div>
           </div>
           <div className="form-check form-switch" style={{position:"absolute",left:"78%",top:"41px"}}>
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={changeMode}/>

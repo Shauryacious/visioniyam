@@ -16,6 +16,8 @@
     border-radius: 50px;
     border: 0px;
     cursor: pointer;
+    transition: 2s;
+    animation: AnimateBorder 1s linear 0s infinite ;
   }
   
   .button-bg {
@@ -35,12 +37,16 @@
   
   .button-wrapper:hover .button-bg {
     filter: blur(10px);
-    transition: filter .4s ease-in;
+    transition: filter .6s ease-in;
+  }
+  .button:hover{
+    box-shadow: 1px 1px 30px rgb(84, 84, 235);
+   animation: none      ;
   }
   
   @keyframes AnimateBorder {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {  box-shadow:2px 2px 30px rgb(34, 177, 224); }
+    50% {  box-shadow:2px 2px 30px rgb(0, 255, 183); }
+    100% {  box-shadow:2px 2px 30px rgb(163, 3, 255); }
   }
   
