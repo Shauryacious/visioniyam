@@ -10,6 +10,9 @@ class MouseController:
         self.camera = cv2.VideoCapture(0)
         self.screen_width, self.screen_height = pyautogui.size()
         self.running = False
+        self.calibration_active = False
+        self.calibration_text = ""
+        self.calibration_end_time = 0
 
     def start(self):
         self.running = True
@@ -27,28 +30,12 @@ class MouseController:
             output = self.face_mesh.process(rgb_frame)
             if output.multi_face_landmarks:
                 landmarks = output.multi_face_landmarks[0].landmark
-                self.change_mouse_position(landmarks)
-                # Displaying Right Eye Points for denoting Click
-                x = int(landmarks[475].x * frame_width)
-                y = int(landmarks[475].y * frame_height)
-                cv2.circle(frame, (x, y), 3, (0, 255, 255))
+                if not self.calibration_active:
+                    self.change_mouse_position(landmarks)
+                    self.right_click([landmarks[475], landmarks[477]])
+                    self.left_click([landmarks[144], landmarks[160]])
+                self.display_landmarks(frame, [landmarks[475], landmarks[477], landmarks[144], landmarks[160]])
 
-                x = int(landmarks[477].x * frame_width)
-                y = int(landmarks[477].y * frame_height)
-                cv2.circle(frame, (x, y), 3, (0, 255, 255))
-
-                self.right_click([landmarks[475], landmarks[477]])
-
-                # Displaying Left Eye points for denoting click
-                x = int(landmarks[144].x * frame_width)
-                y = int(landmarks[144].y * frame_height)
-                cv2.circle(frame, (x, y), 3, (0, 255, 255))
-
-                x = int(landmarks[160].x * frame_width)
-                y = int(landmarks[160].y * frame_height)
-                cv2.circle(frame, (x, y), 3, (0, 255, 255))
-
-                self.left_click([landmarks[144], landmarks[160]])
             self.display_frame(frame)
             self.root.after(10, self.capture)
 
@@ -69,13 +56,11 @@ class MouseController:
 
     def left_click(self, left):
         for landmark in left:
-            #print(left[0].y - left[1].y)
             if (left[0].y - left[1].y) < 0.008:
                 pyautogui.click()
 
     def right_click(self, right):
         for landmark in right:
-            #print(right[1].y - right[0].y)
             if (right[1].y - right[0].y) < 0.021:
                 pyautogui.click(button="right")
 
@@ -84,6 +69,36 @@ class MouseController:
         frame = cv2.resize(frame, (640, 480))
         self.img = ImageTk.PhotoImage(Image.fromarray(frame))
         self.video_panel.config(image=self.img)
+        if self.calibration_text:
+            self.calibration_label.config(text=self.calibration_text)
+
+    def display_landmarks(self, frame, landmarks):
+        frame_height, frame_width, _ = frame.shape
+        for landmark in landmarks:
+            x = int(landmark.x * frame_width)
+            y = int(landmark.y * frame_height)
+            cv2.circle(frame, (x, y), 3, (0, 255, 255))
+
+    def calibrate(self):
+        self.calibration_active = True
+        self.running = True
+        self.capture()
+        self.calibration_text = "Close left eye..."
+        self.update_calibration_text()
+        self.root.after(5000, self.calibrate_right_eye)
+
+    def calibrate_right_eye(self):
+        self.calibration_text = "Close right eye..."
+        self.update_calibration_text()
+        self.root.after(5000, self.finish_calibration)
+
+    def finish_calibration(self):
+        self.calibration_text = "Calibration complete."
+        self.update_calibration_text()
+        self.calibration_active = False
+
+    def update_calibration_text(self):
+        self.calibration_label.config(text=self.calibration_text)
 
     def run(self):
         self.root = tk.Tk()
@@ -101,8 +116,16 @@ class MouseController:
         self.stop_btn = tk.Button(button_frame, text="Stop Capturing", command=self.stop)
         self.stop_btn.pack(side=tk.LEFT, padx=10)
 
+        self.calibrate_btn = tk.Button(button_frame, text="Calibrate", command=self.calibrate)
+        self.calibrate_btn.pack(side=tk.LEFT, padx=10)
+
+        self.calibration_label = tk.Label(self.root, text="")
+        self.calibration_label.pack(pady=10)
+
         self.video_panel = tk.Label(self.root)
         self.video_panel.pack()
+
+
 
         self.root.mainloop()
 
