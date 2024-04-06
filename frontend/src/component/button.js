@@ -5,7 +5,7 @@ const ButtonWithBackground = () => {
   return (
     <div className="container">
       <div className="button-wrapper">
-        <button className="button" type="button"><DownloadComponent></DownloadComponent></button>
+        <button className="homebutton"><DownloadComponent></DownloadComponent></button>
         <div className="button-bg"></div>
       </div>
     </div>
