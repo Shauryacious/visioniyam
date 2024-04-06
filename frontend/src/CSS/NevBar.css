@@ -5,6 +5,7 @@
     text-decoration: None;
 }
 .headerheading:hover{
+    text-decoration: underline;
     cursor: pointer;
 }
 .nevebarbutton{
