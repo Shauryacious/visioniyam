@@ -8,7 +8,6 @@ router.post("/login", authController.login);
 
 
 
-//! PASSWORD FORGET & RESET
 router.post('/forgetPassword', authController.forgetPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 

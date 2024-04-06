@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import Image from '../images/first.png';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 export default function Signin() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [email, setEmail] = useState("");
   const [pnotmatch, setPNotMatch] = useState(true);
+  const[token,changetoek]=useState(false);
+
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -23,56 +27,32 @@ export default function Signin() {
   const handleCPasswordChange = (event) => {
     setCPassword(event.target.value);
   };
-
-  // const handleSubmit = async() => {
-  //   if (password !== cpassword) {
-  //     setPNotMatch(false);
-  //   } else {
-  //     setPNotMatch(true);
-  //     console.log("Name:", name);
-  //     console.log("Email:", email);
-  //     console.log("Password:", password);
-  //     console.log("Confirm Password:", cpassword);
-  //    await fetch('http://localhost:3001/api/v1/users/signup', {
-  //       method: 'POST',
-  //       body: JSON.stringify({
-  //         name: name,
-  //         email: email,
-  //         password: password,
-  //       passwordConfirm:cpassword
-  //       }),
-  //       headers: {
-  //         'Content-type': 'application/json',
-  //       },
-  //       // mode: 'no-cors' 
-  //     })
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         console.log("AuthToken:", data.status);
-  //       })
-  //       .catch(error => {
-  //         console.error('Error:', error);
-  //       });
-  //   }
-  // };
   const handleSubmit = async(e) => {
+    changetoek(true);
     e.preventDefault();
-    const response = await fetch(`http://localhost:3001/api/v1/users/signup`, {
-      method: 'POST',
-      body: JSON.stringify({
+    
+    try {
+      const response = await axios.post('http://localhost:3001/api/v1/users/signup', {
         name: name,
         email: email,
         password: password,
-      passwordConfirm:cpassword
-      }),
-      headers: {
-        'Content-type': 'application/json',
-      },
-      mode: 'no-cors' 
-    })
-
-    console.log(response);
+        passwordConfirm: cpassword
+      
+      });
+    
+      if (response.status >= 200 && response.status < 300) {
+        navigate('/');
+        console.log(response.data.status); 
+        console.log(response.data.jwt_token);
+      } else {
+        console.error('Server error:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    changetoek(false);
   }
+    
   
   return (
     <div>
@@ -113,7 +93,7 @@ export default function Signin() {
               </div>
               <button type="button" className="btn btn-primary" onClick={handleSubmit}>Sign Up</button>
               {!pnotmatch && <div>Password and Confirm Password Must Be same</div>}
-
+             {token&&<div style={{color:"green"}}>Please Wait</div>}
             </div>
           </div>
         </div>

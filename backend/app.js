@@ -2,7 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-//! ROUTERS
 const userRouter = require("./routes/userRoutes");
 const viewRouter = require("./routes/viewRoutes");
 
@@ -17,7 +16,6 @@ const corsOption = {
 app.use(cors(corsOption));
 app.use(express.json());
 
-//! ROUTES
 app.use("/", viewRouter);
 app.use("/api/v1/users", userRouter);
 

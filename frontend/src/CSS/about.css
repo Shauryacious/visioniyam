@@ -1,6 +1,5 @@
 .cardhovereffect{
     box-shadow: none;
-    animation: AnimateBorder 2s ease-in-out 0s infinite  ;
     transition: 1s
 }
 .cardhovereffect:hover{
@@ -12,5 +11,5 @@
     0% {  box-shadow:2px 2px 30px rgb(34, 177, 224); }
     50% {  box-shadow:2px 2px 30px rgb(0, 255, 183); }
     75% {  box-shadow:2px 2px 30px rgb(163, 3, 255); }
-    100%{  box-shadow:2px 2px 30px rgb(163, 3, 255);}
+    100%{  box-shadow:2px 2px 30px rgb(34, 177, 224);}
   }
