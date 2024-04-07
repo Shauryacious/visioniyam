@@ -18,7 +18,7 @@ function App() {
      <div style={{ color: color, backgroundColor: bgcolor, width: "100%", height: "100%", border: "solid", borderColor: bgcolor ,width:"100%"}}>
      <NevBar setColor={setColor} setBgColor={setBgColor} color={color} bgcolor={bgcolor} islogin={islogin} changeislogin={changeislogin} />
      <Routes>
-      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/' element={<Home islogin={islogin}></Home>}></Route>
       <Route path="/how" element={<How></How>}></Route>
       <Route path='/about' element={<About color={color} bgcolor={bgcolor}></About>}></Route>
       <Route path="/docs" element={<Readocs color={color} bgcolor={bgcolor}></Readocs>}></Route>
