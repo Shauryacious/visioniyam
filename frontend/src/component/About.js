@@ -49,7 +49,6 @@ export default function Card(props) {
 </a>
   </div>
 </div>
-   {/* Card 2 */}
    <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 cardhovereffect">
   <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-80">
     <img src={saurya} alt="profile-picture" />
@@ -88,7 +87,6 @@ export default function Card(props) {
 </a>
   </div>
 </div>
-    {/* Card 3 */}
     <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 cardhovereffect">
   <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-60">
     <img src={karan} alt="profile-picture" />

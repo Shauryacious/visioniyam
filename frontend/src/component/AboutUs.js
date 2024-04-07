@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './../CSS/aboutus.css'; // Import your CSS file for styling
+import './../CSS/aboutus.css'; 
 import Image from '../images/team.jpg'
 const AboutUs = (props) => {
     return (
