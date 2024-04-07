@@ -14,7 +14,7 @@ Visioniyam is an innovative assistive technology solution designed to empower in
 
 To use Visionary, follow these steps:
 
-1. Head over to https://visioniyam-backend-production.up.railway.app/
+1. Head over to https://visioniyam.vercel.app/
 2. Download and install the software
 
 
