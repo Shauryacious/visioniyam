@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../images/first.png';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 export default function Login(props) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,9 +21,9 @@ export default function Login(props) {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    
+
     try {
-      const response = await axios.post('http://localhost:3001/api/v1/users/login', {
+      const response = await axios.post('https://visioniyam.onrender.com/api/v1/users/login', {
         email: email,
         password: password
       });
@@ -55,7 +55,7 @@ export default function Login(props) {
               </a>
             </div>
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl " style={{textAlign:"center",fontWeight:"600"}}>
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl " style={{ textAlign: "center", fontWeight: "600" }}>
                 Sign in to your account
               </h1>
               <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>

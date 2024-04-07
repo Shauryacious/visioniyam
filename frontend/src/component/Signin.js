@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from '../images/first.png';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 export default function Signin(props) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -9,7 +9,7 @@ export default function Signin(props) {
   const [cpassword, setCPassword] = useState("");
   const [email, setEmail] = useState("");
   const [pnotmatch, setPNotMatch] = useState(true);
-  const[token,changetoek]=useState(false);
+  const [token, changetoek] = useState(false);
 
 
   const handleNameChange = (event) => {
@@ -27,22 +27,22 @@ export default function Signin(props) {
   const handleCPasswordChange = (event) => {
     setCPassword(event.target.value);
   };
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     changetoek(true);
     e.preventDefault();
-    
+
     try {
-      const response = await axios.post('http://localhost:3001/api/v1/users/signup', {
+      const response = await axios.post('https://visioniyam.onrender.com/api/v1/users/signup', {
         name: name,
         email: email,
         password: password,
         passwordConfirm: cpassword
-      
+
       });
-    
+
       if (response.status >= 200 && response.status < 300) {
         navigate('/');
-        console.log(response.data.status); 
+        console.log(response.data.status);
         console.log(response.data.jwt_token);
         props.changeislogin(true);
       } else {
@@ -53,8 +53,8 @@ export default function Signin(props) {
     }
     changetoek(false);
   }
-    
-  
+
+
   return (
     <div>
       <section className=" ">
@@ -94,7 +94,7 @@ export default function Signin(props) {
               </div>
               <button type="button" className="btn btn-primary" onClick={handleSubmit}>Sign Up</button>
               {!pnotmatch && <div>Password and Confirm Password Must Be same</div>}
-             {token&&<div style={{color:"green"}}>Please Wait</div>}
+              {token && <div style={{ color: "green" }}>Please Wait</div>}
             </div>
           </div>
         </div>
