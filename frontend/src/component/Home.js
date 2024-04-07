@@ -14,7 +14,7 @@ export default function Home(props) {
         </div>
       </div>
       <div style={{ position: 'absolute', top: "440px",left:'15%'}}>
-      <ButtonWithBackground></ButtonWithBackground>
+      <ButtonWithBackground islogin={props.islogin}></ButtonWithBackground>
         
       </div>
      
