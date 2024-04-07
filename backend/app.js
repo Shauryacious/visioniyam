@@ -7,8 +7,9 @@ const viewRouter = require("./routes/viewRoutes");
 
 const app = express();
 
+
 const corsOption = {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true
 };
