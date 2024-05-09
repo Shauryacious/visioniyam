@@ -35,7 +35,7 @@ export default function Readocs(props) {
       <div style={{display: "flex", justifyContent: "center"}}>
         <div className='readbox' style={{paddingTop: "40px"}}>
           <div className='Readheading' >*System Requirements - Python &gt;=3.7 & &lt;=3.11</div>
-          <div className='Readcontent'><li>1. Download and unzip the software with respect to your Operating System from the link <a href="https://github.com/Shauryacious/visioniyam">[LINK]</a>.</li></div>
+          <div className='Readcontent'><li>1. Download and unzip the software with respect to your Operating System from the link <a className="text-blue-700" href="https://github.com/Shauryacious/visioniyam">[LINK]</a>.</li></div>
           <div className='Readcontent'><li>2. Extract the zip file.</li></div>
           <div className='Readcontent'><li>3. Open your preferred CLI Terminal in the extracted folder, and execute the following commands with respect to your Operating System.</li></div>
           <div className='ReadDocsbox2' style={{width: "75%", position: "relative", left: "30px"}}>
